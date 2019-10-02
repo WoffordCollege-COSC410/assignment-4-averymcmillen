@@ -20,7 +20,6 @@ public class GuiMain extends JFrame implements ActionListener {
         //}
     }
 
-//build button array of 9 buttons
 
     public GuiMain() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
