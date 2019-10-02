@@ -41,10 +41,55 @@ public class TicTacToeModel {
     }
 
     public Result getResult() {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+                if (board[i][0] == Mark.XMARK) {
+                    return Result.XWIN;
+                }
+                else if (board[i][0] == Mark.OMARK) {
+                    return Result.OWIN;
+                }
+            }
+            else if (board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+                if (board[0][i] == Mark.XMARK) {
+                    return Result.XWIN;
+                }
+                else if (board[i][0] == Mark.OMARK) {
+                    return Result.OWIN;
+                }
+            }
+            else if (board[i][i] != Mark.EMPTY) {
+                return Result.TIE;
+            }
+            else {
+                return Result.NONE;
+            }
+        }
+        if (board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+            if (board[0][0] == Mark.XMARK) {
+                return Result.XWIN;
+            }
+            else {
+                return Result.OWIN;
+            }
+        }
+        else if (board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+            if (board[0][2] == Mark.XMARK) {
+                return Result.XWIN;
+            }
+            else{
+                return Result.OWIN;
+            }
+        }
+        else{
+            //if (board[][]);
+            //return tie or none
+        }
         return Result.NONE;
     }
 
     public String toString() {
+        //what is this for??
         return "";
     }
 

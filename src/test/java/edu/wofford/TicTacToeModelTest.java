@@ -10,7 +10,7 @@ public class TicTacToeModelTest {
     public void setUp() {
         model = new TicTacToeModel();
     }
-    
+
     @Test
 	public void testInitialBoardIsEmpty() {
         for(int i = 0; i < 3; i++) {
