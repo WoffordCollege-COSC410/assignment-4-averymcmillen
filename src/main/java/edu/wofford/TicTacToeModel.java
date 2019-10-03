@@ -85,46 +85,46 @@ public class TicTacToeModel {
     }
 
     public String toString() {
-        String boardString = "";
+        StringBuilder boardString = new StringBuilder();
 
         for (int row = 0; row < 3; row++){
             switch (board[row][0]){
                 case EMPTY:
-                    boardString += " |";
+                    boardString.append(" |");
                     break;
                 case XMARK:
-                    boardString += "X|";
+                    boardString.append("X|");
                     break;
                 case OMARK:
-                    boardString += "O|";
+                    boardString.append("O|");
                     break;
             }
             switch (board[row][1]){
                 case EMPTY:
-                    boardString += " |";
+                    boardString.append(" |");
                     break;
                 case XMARK:
-                    boardString += "X|";
+                    boardString.append("X|");
                     break;
                 case OMARK:
-                    boardString += "O|";
+                    boardString.append("O|");
                     break;
             }
             switch (board[row][2]){
                 case EMPTY:
-                    boardString += " ";
+                    boardString.append(" ");
                     break;
                 case XMARK:
-                    boardString += "X";
+                    boardString.append("X");
                     break;
                 case OMARK:
-                    boardString += "O";
+                    boardString.append("O");
                     break;
             }
             if (row < 2){
-                boardString += "\n-----\n";
+                boardString.append("\n-----\n");
             }
         }
-        return boardString;
+        return boardString.toString();
     }
 }
