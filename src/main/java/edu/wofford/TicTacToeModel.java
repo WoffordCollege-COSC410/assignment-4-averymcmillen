@@ -85,33 +85,44 @@ public class TicTacToeModel {
     }
 
     public String toString() {
-        String boardString = " ";
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
-                if (board[row][col] == Mark.XMARK && board[row][col] != board[row][2]) {
-                    boardString = "X" + "|";
-                } else if (board[row][col] == Mark.XMARK && board[row][col] == board[row][2]) {
-                    boardString = "X" + "\n";
-                    if (board[row][col] != board[2][2]) {
-                        boardString += "-----";
-                    }
-                }
-                else if (board[row][col] == Mark.OMARK && board[row][col] != board[row][2]) {
-                    boardString = "O" + "|";
-                }
-                else if (board[row][col] == Mark.OMARK && board[row][col] == board[row][2]) {
-                    boardString = "O" + "\n";
-                    if (board[row][col] != board[2][2]) {
-                        boardString += "-----";
-                    }
-                } else if (board[row][col] == Mark.EMPTY && board[row][col] != board[row][2]) {
-                    boardString = " " + "|";
-                } else {
-                    boardString = " " + "\n";
-                    if (board[row][col] != board[2][2]) {
-                        boardString += "-----";
-                    }
-                }
+        String boardString = "";
+
+        for (int row = 0; row < 3; row++){
+            switch (board[row][0]){
+                case EMPTY:
+                    boardString += " |";
+                    break;
+                case XMARK:
+                    boardString += "X|";
+                    break;
+                case OMARK:
+                    boardString += "O|";
+                    break;
+            }
+            switch (board[row][1]){
+                case EMPTY:
+                    boardString += " |";
+                    break;
+                case XMARK:
+                    boardString += "X|";
+                    break;
+                case OMARK:
+                    boardString += "O|";
+                    break;
+            }
+            switch (board[row][2]){
+                case EMPTY:
+                    boardString += " ";
+                    break;
+                case XMARK:
+                    boardString += "X";
+                    break;
+                case OMARK:
+                    boardString += "O";
+                    break;
+            }
+            if (row < 2){
+                boardString += "\n-----\n";
             }
         }
         return boardString;
