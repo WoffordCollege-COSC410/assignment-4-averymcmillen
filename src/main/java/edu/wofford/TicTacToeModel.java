@@ -85,7 +85,7 @@ public class TicTacToeModel {
     }
 
     public String toString() {
-        StringBuilder boardString = new StringBuilder();
+        StringBuilder boardString = new StringBuilder(29);
 
         for (int row = 0; row < 3; row++){
             switch (board[row][0]){
